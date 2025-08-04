@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entregas no Cúbico - Delivery Rápido e Eficiente</title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+/* Reset e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+        
+ body {
+background-color: #f9f9f9;
+color: #333;
+line-height: 1.6;
+}
+.container {
+ width: 100%;
+ margin: 0 auto;
+ padding: 0 20px;
+}
+ /* Header 
+header {
+  background-color: #FF1818;
+ color: white;
+ padding: 15px 0;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+ }
+ .header-container {
+  display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.logo {
+ font-size: 24px;
+ font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.logo i {
+    margin-right: 10px;
+    font-size: 28px;
+}
+nav ul {
+ display: flex;
+ list-style: none;
+}
+nav ul li {
+ margin-left: 20px;
+}
+ nav ul li a {
+  color: white;
+ text-decoration: none;
+    font-weight: 500;
+transition: all 0.3s ease;
+}
+nav ul li a:hover { opacity: 0.8;
+        }
+        
+  .mobile-menu {
+       display: none;
+       font-size: 24px;
+      cursor: pointer;
+        }
+        */
+
+
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+        }
+        /* Hero Section */
+        .hero {
+background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ff6b00;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #e05d00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Produtos em Destaque */
+        .featured-products {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: #ff6b00;
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+.product-card:hover {
+transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+.product-img {
+     height: 200px;
+     overflow: hidden;
+        }
+        
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        /* Sobre Nós */
+        .about {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .about-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .about-text, .about-img {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-text h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+       /* Funcionamentos */
+         #how-it-works{
+       display: flex;
+       align-items: center;
+       flex-wrap: wrap-reverse;
+      }
+      #how-it-works .about-img img{
+         width: 80%;
+         border-radius: 10px;
+         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+       }  
+        /* Benefícios */
+        .benefits {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .benefits-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap-reverse;
+          flex-direction: row-reverse
+        }
+        
+        .benefits-text, .benefits-img {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .benefits-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefits-list {
+            list-style: none;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .benefits-list i {
+            color: #ff6b00;
+            font-size: 20px;
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        /* Mensagem e Newsletter */
+        .message-newsletter {
+            padding: 80px 0;
+        }
+        
+        .message-newsletter-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .message, .newsletter {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .message img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .newsletter h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 400px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 30px 0 0 30px;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .newsletter-form button {
+            padding: 0 20px;
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #e05d00;
+        }
+        
+        /* Parceiros */
+        .partners {
+            padding: 80px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+        
+        .partners-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .partner-logo {
+            max-width: 150px;
+            max-height: 80px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+/* Footer */
+footer {
+   background-color: #222;
+  color: #fff;
+ padding: 60px 0 20px;
+}
+.footer-container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+.footer-col h3 {
+     font-size: 18px;
+  margin-bottom: 20px;
+position: relative;
+padding-bottom: 10px;
+        }
+.footer-col h3::after {
+ content: '';
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ width: 50px;
+ height: 2px;
+ background-color: #ff6b00;
+}
+.footer-col ul {
+     list-style: none;
+}
+.footer-col ul li {
+ margin-bottom: 10px;
+}
+.footer-col ul li a {
+ color: #bbb;
+ text-decoration: none;
+ transition: color 0.3s ease;
+}
+.footer-col ul li a:hover {
+ color: #ff6b00;
+}
+.social-links {
+  display: flex;
+  gap: 15px;
+ margin-top: 20px;
+ }
+.social-links a {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ width: 40px;
+ height: 40px;
+ background-color: #333;
+ color: #fff;
+ border-radius: 50%;
+ transition: all 0.3s ease;
+}
+.social-links a:hover {
+  background-color: #ff6b00;
+ transform: translateY(-3px);
+}
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+ border-top: 1px solid #444;
+ color: #bbb;
+ font-size: 14px;
+}
+
+ /* Responsividade */
+@media (max-width: 768px) {
+.header-container {
+  flex-direction: column;
+  text-align: center;
+ }
+ nav ul {
+  margin-top: 20px;
+ flex-direction: column;
+align-items: center;
+}
+nav ul li {
+ margin: 10px 0;
+}
+ .hero h1 {
+ font-size: 36px;
+}
+.hero p {
+ font-size: 18px;
+  }
+ .section-title {
+ font-size: 30px;
+ }
+ .about-container, .benefits-container, .message-newsletter-container {
+ flex-direction: column;
+}
+.about-text, .about-img, .benefits-text, .benefits-img, .message, .newsletter {
+ padding: 10px;
+ }
+ .newsletter-form {
+ flex-direction: column;
+ }
+ .newsletter-form input {
+  border-radius: 30px;
+ margin-bottom: 10px;
+ }
+ .newsletter-form button {
+  border-radius: 30px;
+  padding: 12px;
+ }
+}
+@media (max-width: 480px) {
+.hero h1 {
+ font-size: 28px;
+ }
+.hero p {
+ font-size: 16px;
+}
+.section-title {
+ font-size: 26px;
+            }
+            
+.products-grid {
+  grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+ <!-- Header -->
+
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="data:image/png;base64,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" alt="Cúbico Delivery" width="50px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">Como Funciona</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#partners">Parceiros</a>
+                    </li>
+                   <li class="nav-item">
+                     <a class="nav-link" href="#partners">Serviços
+</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center language-selector">
+                    <i class="fas fa-globe me-2"></i>
+                    <select class="form-select form-select-sm border-0">
+                        <option selected>Português</option>
+                        <option>English</option>
+                    </select>
+                    <a href="#" class="btn btn-primary ms-3">Entrar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header 
+    <header>
+<div class="container header-container">
+    <div class="logo">
+     <img src="data:image/png;base64,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" width="50px" style="border-radius:2px; mardign: 4px;">
+<span>Entregas no Cúbico</span>
+</div>
+ <nav>
+     <ul>
+  <li><a href="#">Home</a></li>
+ <li><a href="#">Serviços</a></li>
+ <li><a href="#">Produtos</a></li>
+ <li><a href="#">Sobre Nós</a></li>
+ <li><a href="#">Contato</a></li>
+ </ul>
+</nav>
+<div class="mobile-menu">
+ <i class="fas fa-bars"></i>
+     </div>
+</div>
+    </header>-->
+
+    <!-- Hero Section -->
+  <section class="hero">
+<div class="container">
+<h1>Entregas Rápidas no Seu Bairro!</h1>
+<p>Receba seus produtos favoritos no conforto da sua casa com a velocidade e qualidade que só o Entregas no Cúbico oferece.</p>
+ <!--<a href="#" class="btn">Peça Agora</a>-->
+ <div class="d-flex justify-content-center gap-3">
+    <a href="#products" class="btn btn-primary btn-lg px-4">Peça Agora</a>
+   <a href="#how-it-works" class="btn btn-outline-light btn-lg px-4">Como Funciona</a>
+    </div>
+</div>
+    </section>
+    <!-- Produtos em Destaque -->
+    <section class="featured-products">
+ <div class="container">
+ <h2 class="section-title">Produtos Mais Procurados</h2>
+<div class="products-grid">
+<div class="product-card">
+ <div class="product-img">
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Hambúrguer">
+</div>
+ <div class="product-info">
+ <h3>Hambúrguer Gourmet</h3>
+<p>Delicioso hambúrguer artesanal com ingredientes selecionados.</p>
+<a href="#" class="btn">Ver Mais</a>
+</div>
+</div>
+                
+<div class="product-card">
+ <div class="product-img">
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Pizza">
+ </div>
+ <div class="product-info">
+<h3>Pizza Premium</h3>
+<p>Pizza feita com massa fina e ingredientes de alta qualidade.</p>
+<a href="#" class="btn">Ver Mais</a>
+</div>
+</div>
+                
+<div class="product-card">
+ <div class="product-img">
+<img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sushi">
+</div>
+  <div class="product-info">
+<h3>Combo Sushi</h3>
+ <p>Seleção de sushis frescos preparados por chefs especializados.</p>
+ <a href="#" class="btn">Ver Mais</a>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sobremesa">
+</div>
+<div class="product-info">
+<h3>Sobremesas Variadas</h3>
+<p>Doces e sobremesas para todos os gostos e ocasiões.</p>
+ <a href="#" class="btn">Ver Mais</a>
+ </div>
+     </div>
+  </div>
+ </div>
+    </section>
+
+    <!-- Sobre Nós -->
+   <section class="about">
+<div class="container about-container">
+ <div class="about-img">
+<img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Equipe Entregas no Cúbico">
+            </div>
+<div class="about-text">
+     <h2>Quem Somos</h2>
+ <p>O Entregas no Cúbico nasceu da vontade de revolucionar o mercado de delivery, oferecendo não apenas velocidade, mas também qualidade e atendimento excepcional.</p>
+ <p>Nossa equipe é formada por profissionais dedicados que entendem que cada entrega é mais do que um simples pedido - é uma experiência que deve ser memorável.</p>
+ <p>Com tecnologia de ponta e uma rede de parceiros selecionados, garantimos que seu pedido chegue até você no menor tempo possível, mantendo todo o sabor e qualidade.</p>
+ <!--<a href="#" class="btn">Saiba Mais</a>-->
+<div class="mt-4">
+  <a href="#" class="btn btn-primary me-2">Nossa História</a>
+  <a href="#" class="btn btn-outline-primary">Nossos Parceiros</a>
+ </div>
+</div>
+ </div>
+    </section>
+
+    <!-- nosso funcionamentos -->
+    <section class="how-it-works-section bg-light about" id="how-it-works">
+        <div class="container about-container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 about-img">
+                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Como Funciona" class="img-fluid how-it-works-img">
+                </div>
+                <div class="col-lg-6 order-lg-1 about-text">
+                    <h2 class="fw-bold mb-4">Como Funciona</h2>
+                    <div class="d-flex mb-3">
+                        <div class="me-4">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">1</div>
+                        </div>
+                        <div>
+                            <h5>Escolha seus produtos</h5>
+                            <p class="text-muted">Navegue pelo nosso catálogo e selecione os itens que deseja.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="me-4">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">2</div>
+                        </div>
+                        <div>
+                            <h5>Finalize seu pedido</h5>
+                            <p class="text-muted">Informe o endereço de entrega e forma de pagamento.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="me-4">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">3</div>
+                        </div>
+                        <div>
+                            <h5>Acompanhe em tempo real</h5>
+                            <p class="text-muted">Receba atualizações e acompanhe seu entregador em tempo real.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="me-4">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">4</div>
+                        </div>
+                        <div>
+                            <h5>Receba e aproveite</h5>
+                            <p class="text-muted">Seu pedido chegará rápido e com toda qualidade que você merece.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="benefits">
+<div class="container benefits-container">
+<div class="benefits-text">
+ <h2>O que você ganha com o Entregas no Cúbico</h2>
+<ul class="benefits-list">
+ <li>
+  <i class="fas fa-bolt"></i>
+  <div>
+ <h3>Entrega Rápida</h3>
+                            <p>Nossa tecnologia de roteamento inteligente garante o menor tempo de entrega possível.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <h3>Segurança</h3>
+                            <p>Todos os nossos entregadores passam por rigoroso processo de seleção e treinamento.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-percentage"></i>
+                        <div>
+  <h3>Descontos Exclusivos</h3>
+ <p>Clientes cadastrados recebem ofertas e descontos especiais regularmente.</p>
+</div>
+ </li>
+ <li>
+ <i class="fas fa-headset"></i>
+<div>  
+<h3>Atendimento 24/7</h3>
+ <p>Nossa equipe de atendimento está disponível a qualquer hora para resolver qualquer questão.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+ <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cliente recebendo entrega">
+        </div>
+    </section>
+
+    <!-- Mensagem e Newsletter -->
+    <section class="message-newsletter">
+        <div class="container message-newsletter-container">
+            <div class="message">
+                <img src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Pessoa recebendo mensagem">
+            </div>
+            <div class="newsletter">
+                <h3>Receba Ofertas Exclusivas</h3>
+                <p>Cadastre-se em nossa newsletter e receba em primeira mão promoções, novidades e descontos especiais diretamente no seu e-mail.</p>
+  <form class="newsletter-form">
+                    <input type="email" placeholder="Digite seu melhor e-mail" required>
+                    <button type="submit">Enviar <i class="fas fa-paper-plane"></i></button>
+                </form>
+                <p class="small-text">Não se preocupe, não enviamos spam. Seu e-mail está seguro conosco.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parceiros -->
+    <section class="partners">
+        <div class="container">
+ <h2 class="section-title">Nossos Parceiros</h2>
+ <div class="partners-logos">
+ <img src="https://via.placeholder.com/150x80?text=Restaurante+A" alt="Restaurante A" class="partner-logo">
+<img src="https://via.placeholder.com/150x80?text=Restaurante+B" alt="Restaurante B" class="partner-logo">
+ <img src="https://via.placeholder.com/150x80?text=Restaurante+C" alt="Restaurante C" class="partner-logo">
+ <img src="https://via.placeholder.com/150x80?text=Restaurante+D" alt="Restaurante D" class="partner-logo">
+ <img src="https://via.placeholder.com/150x80?text=Restaurante+E" alt="Restaurante E" class="partner-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Entregas no Cúbico</h3>
+                    <p>Revolucionando o mercado de delivery com velocidade, qualidade e atendimento excepcional.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Serviços</a></li>
+                        <li><a href="#">Produtos</a></li>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Suporte</h3>
+                    <ul>
+                       <!-- <li><a href="#">FAQ</a></li>-->
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">Seja um Parceiro</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> JHC6+J3 Lobito,Angola</li>
+                        <li><i class="fas fa-phone"></i>+244972089246</li>
+                        <li><i class="fas fa-envelope"></i> apoio@entregasnocubico.ao</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; por GV por Entregas no cubico.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+        
+        // Animação ao rolar
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+    </script>
+</body>
+</html>
